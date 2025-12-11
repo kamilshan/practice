@@ -1,17 +1,119 @@
 
-  .greenbutton {
-    padding: 12px 25px;
-    background: rgba(255, 255, 255, 0.15);
-    color: rgb(255,0,0;
-    border: 1px solid rgba(255,255,255,0.25);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-  }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: inherit;
+}
+table caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: 600;
+    padding: 0.4rem 0;
+    color: #222;
+}
+table th, table td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #e6e9ee;
+    vertical-align: middle;
+}
+table thead th {
+    background: #f4f7fb;
+    color: #a92a2a;
+    font-weight: 700;
+    text-align: left;
+}
+table tbody tr:nth-child(even) {
+    background: #fbfbfd;
+}
+table tbody tr:hover {
+    background: #eef6ff;
+}
 
-  .greenbutton:hover {
-    background: rgba(255,255,255,0.25);
-    transform: translateY(-3px);
-  }
+
+.table-compact th, .table-compact td {
+    padding: 0.3rem 0.5rem;
+}
+
+
+a {
+    color: #0366d6;
+    text-decoration: underline;
+    transition: color .12s ease, text-decoration .12s ease;
+}
+a:hover {
+    color: #023e8a;
+    text-decoration: none;
+}
+a:active { color: #012a4a; }
+a:visited { color: #5a3d9b; }
+
+table a {
+    color: #0451a5;
+    text-decoration: underline;
+}
+table a:hover { color: #023e8a; }
+
+
+a.button, .btn-link {
+    display: inline-block;
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
+    background: #0366d6;
+    color: #fff;
+    text-decoration: none;
+}
+a.button:hover { background: #024e9c; }
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+img.rounded { border-radius: 6px; }
+img.thumbnail {
+    border: 1px solid #e1e4e8;
+    padding: 4px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* Images in table cells (small previews) */
+table td img {
+    max-height: 64px;
+    width: auto;
+    display: block;
+    margin: 4px auto;
+}
+
+/* Figure caption */
+figure { margin: 0; }
+figure img { display: block; }
+figure figcaption {
+    font-size: .9rem;
+    color: #666;
+    text-align: center;
+    margin-top: .3rem;
+}
+
+/* Responsive: simple stacked table for small screens
+   Use data-label attributes on td elements for headings */
+@media (max-width: 640px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { margin-bottom: 0.75rem; border: 1px solid #eee; padding: 0.5rem; }
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.4rem 0.6rem;
+        border: none;
+        border-bottom: 1px solid #f3f3f3;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        margin-right: 8px;
+        color: #333;
+    }
+    table td img { max-height: 80px; margin: 0; }
+}
